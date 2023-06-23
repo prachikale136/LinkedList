@@ -42,5 +42,40 @@ namespace DataStructureLinkedList
                 temp = temp.Next;
             }
         }
+
+        public Node InserAtParticularPosition(int position, int data)
+        {
+            if (position < 1)
+            {
+                Console.WriteLine("Invalid position");
+            }
+            if (position == 1)
+            {
+                var newNode = new Node(data);
+                newNode.Next = this.Head;
+                Head = newNode;
+            }
+            else
+            {
+                Node temp = this.Head;
+                while (position-- != 0 && temp != null)
+                {
+                    if (position == 1)
+                    {
+                        Node node = new Node(data);
+                        node.Next = temp.Next;
+                        temp.Next = node;
+                        break;
+                    }
+                    temp = temp.Next;
+                }
+                if (position != 1)
+                {
+                    Console.WriteLine("Position out of range");
+                }
+            }
+            return Head;
+        }
+
     }
 }
