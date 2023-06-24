@@ -99,5 +99,24 @@ namespace DataStructureLinkedList
             }
             newNode.Next = null;
             return Head;
-    }   }
+        }
+        public void Search(int value)
+        {
+            Node temp = this.Head;
+            while (temp != null)
+            {
+                if (temp.Data == value)
+                {
+                    Console.WriteLine("Given value: " + value + "is present in linked list");
+                    return;
+                }
+                temp = temp.Next;
+
+            }
+            if (temp == null)
+                Console.WriteLine("given value:" + value + "is not present in linked list");
+        }
+
+
+    }
 }

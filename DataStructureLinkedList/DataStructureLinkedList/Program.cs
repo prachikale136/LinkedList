@@ -18,6 +18,8 @@ namespace DataStructureLinkedList
             list.Display();
             list.RemoveFirstNode();
             list.RemoveLastNode();
+            list.Search(30);
+
         }
     }
 }
