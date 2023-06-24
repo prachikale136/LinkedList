@@ -76,6 +76,12 @@ namespace DataStructureLinkedList
             }
             return Head;
         }
-
+        public Node RemoveFirstNode()
+        {
+            if (this.Head == null)
+                return null;
+            this.Head = this.Head.Next;
+            return this.Head;
+        }
     }
 }
