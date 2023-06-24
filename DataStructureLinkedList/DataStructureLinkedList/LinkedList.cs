@@ -83,5 +83,21 @@ namespace DataStructureLinkedList
             this.Head = this.Head.Next;
             return this.Head;
         }
-    }
+
+        public Node RemoveLastNode()
+        {
+            if (Head == null)
+            {
+                return null;
+            }
+            if (Head.Next == null)
+                return null;
+            Node newNode = Head;
+            while (newNode.Next.Next != null)
+            {
+                newNode = newNode.Next;
+            }
+            newNode.Next = null;
+            return Head;
+    }   }
 }
